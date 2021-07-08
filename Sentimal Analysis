@@ -1,1 +1,10 @@
+!pip install -q transformers
+from transformers import pipeline
+senti_pipeline = pipeline("sentiment-analysis")
+senti_pipeline("I am extremely happy to share this video with all of you")
 
+#[{'label': 'POSITIVE', 'score': 0.9998635053634644}]
+
+senti_pipeline("I am sad that you haven't subscribed to my channel yet")
+
+#[{'label': 'NEGATIVE', 'score': 0.9981951117515564}]
